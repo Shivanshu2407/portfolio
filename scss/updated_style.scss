@@ -1,30 +1,103 @@
-@import 'bootstrap/bootstrap';
+.block-20 {
+  width: 100%; /* Set the width to 100% to make the image responsive */
+  height: 250px; /* Set a fixed height for the image */
+  background-size: cover; /* Scale the background image to cover the entire element */
+  background-position: center; /* Center the background image horizontally and vertically */
+  transition: transform 0.3s ease-in-out; /* Add a transition effect to the image */
+}
+
+.block-20:hover {
+  transform: scale(1.1); /* Scale the image up by 10% on hover */
+}@media (min-width: 1200px) {
+  .block-20 {
+	height: 300px; /* Increase the image height for larger screens */
+  }
+}
+
+@media (min-width: 1800px) {
+  .block-20 {
+	height: 350px; /* Increase the image height for even larger screens */
+  }
+}.block-20 {
+  object-fit: cover; /* Scale the image to cover the entire element while maintaining its aspect ratio */
+}.block-20 {
+  width: 100%; /* Set the width to 100% to make the image responsive */
+  height: 250px; /* Set a fixed height for the image */
+  background-size: contain; /* Scale the image to fit within the container */
+  background-position: center; /* Center the background image horizontally and vertically */
+  transition: transform 0.3s ease-in-out; /* Add a transition effect to the image */
+}.block-20 {
+  width: 100%; /* Set the width to 100% to make the image responsive */
+  height: 250px; /* Set a fixed height for the image */
+  background-size: contain; /* Scale the image to fit within the container */
+  background-position: center; /* Center the background image horizontally and vertically */
+  background-repeat: no-repeat; /* Prevent the image from being repeated */
+  transition: transform 0.3s ease-in-out; /* Add a transition effect to the image */
+}.block-20 {
+  width: 100%; /* Set the width to 100% to make the image responsive */
+  height: 250px; /* Set a fixed height for the image */
+  object-fit: fill; /* Stretch the image to fill the container */
+  transition: transform 0.3s ease-in-out; /* Add a transition effect to the image */
+}@import 'bootstrap/bootstrap';
 @import 'bootstrap/variables';
 
 $font-primary: 'Poppins',Arial, sans-serif;
 
 $white: #fff;
 $black: #000000;
-$darken: #232931;
+$darken: #232931;.block-20 {
+  width: 100%; /* Set the width to 100% to make the image responsive */
+  padding-bottom: 56.25%; /* Set the padding-bottom to 56.25% to achieve a 16:9 aspect ratio */
+  background-size: cover; /* Scale the image to cover the entire element */
+  background-position: center; /* Center the background image horizontally and vertically */
+  transition: transform 0.3s ease-in-out; /* Add a transition effect to the image */
+}.block-20 {
+  width: 100% !important;
+  padding-bottom: 56.25% !important;
+  background-size: cover !important;
+  background-position: center !important;
+  transition: transform 0.3s ease-in-out !important;
+}.project-banner {
+  width: 100%;
+  padding-bottom: 56.25%;
+  background-size: cover;
+  background-position: center;
+  transition: transform 0.3s ease-in-out;
+}<div class="block-20 project-banner">...</div>
 
 $primary: #ffbd39;
 $secondary: #a0f669;
 
+// Responsive breakpoints
+$breakpoints: (
+	'mobile': 320px,
+	'tablet': 768px,
+	'desktop': 1024px,
+	'large': 1440px
+);
 
+// Mixins for responsive design
+@mixin respond-to($breakpoint) {
+	@if map-has-key($breakpoints, $breakpoint) {
+		@media (min-width: map-get($breakpoints, $breakpoint)) {
+			@content;
+		}
+	}
+}
 
 @mixin border-radius($radius) {
-  -webkit-border-radius: $radius;
-     -moz-border-radius: $radius;
-      -ms-border-radius: $radius;
-          border-radius: $radius;
+	-webkit-border-radius: $radius;
+	-moz-border-radius: $radius;
+	-ms-border-radius: $radius;
+	border-radius: $radius;
 }
 
 @mixin transition($transition) {
-    -moz-transition:    all $transition ease;
-    -o-transition:      all $transition ease;
-    -webkit-transition: all $transition ease;
-    -ms-transition: 		all $transition ease;
-    transition:         all $transition ease;
+	-moz-transition:    all $transition ease;
+	-o-transition:      all $transition ease;
+	-webkit-transition: all $transition ease;
+	-ms-transition: 		all $transition ease;
+	transition:         all $transition ease;
 }
 
 html {
@@ -63,7 +136,6 @@ h1, h2, h3, h4, h5,
 .text-primary {
 	color: $primary!important;
 }
-
 
 .ftco-navbar-light {
 	background: transparent!important;
@@ -329,7 +401,6 @@ h1, h2, h3, h4, h5,
 	font-size: 24px;
 	text-transform: uppercase;
 }
-
 
 .hero{
 	h3.vr{
@@ -645,7 +716,6 @@ h1, h2, h3, h4, h5,
 	}
 } 
 
-
 .hero-wrap{
 	width: 100%;
 	height: 100%;
@@ -720,7 +790,6 @@ h1, h2, h3, h4, h5,
 	}
 }
 
-
 .bg-light {
 	background: #f8f9fa!important;
 }
@@ -732,7 +801,6 @@ h1, h2, h3, h4, h5,
 .bg-primary{
 	background: $primary;
 }
-
 
 //BUTTON
 .btn {
@@ -811,7 +879,6 @@ h1, h2, h3, h4, h5,
 	}
 }
 
-
 //FTCO ABOUT
 .ftco-about{
 	.img-about{
@@ -859,7 +926,6 @@ h1, h2, h3, h4, h5,
 		}
 	}
 }
-
 
 .resume-wrap{
 	width: 100%;
@@ -971,8 +1037,6 @@ h1, h2, h3, h4, h5,
 	}
 }
 
-
-
 //SKILLS--------------------
 .progress-wrap{
 	width: 100%;
@@ -1022,7 +1086,6 @@ h1, h2, h3, h4, h5,
 	}
 }
 
-
 // HIRE ME
 .ftco-hireme{
 	background: $primary;
@@ -1042,7 +1105,6 @@ h1, h2, h3, h4, h5,
 		padding-top: 10em !important;
 	}
 }
-
 
 //PROJECT
 .project{
@@ -1129,7 +1191,6 @@ h1, h2, h3, h4, h5,
 	}
 }
 
-
 // USEFUL CODE
 .aside-stretch{
 	background: lighten($primary,10%);
@@ -1151,7 +1212,6 @@ h1, h2, h3, h4, h5,
 		}
 	}
 }
-
 
 .form-control {
 	height: 52px!important;
@@ -1185,7 +1245,6 @@ textarea.form-control {
 	background: $primary!important;
 }
 
-
 //ABOUT
 .about-author{
 	@include border-radius(5px);
@@ -1200,7 +1259,6 @@ textarea.form-control {
 
 	}
 }
-
 
 .ftco-section {
 	padding: 7em 0;
@@ -1220,8 +1278,6 @@ textarea.form-control {
 .ftco-bg-dark {
 	background: #3c312e;
 }
-
-
 
 .ftco-footer {
 	font-size: 16px;
@@ -1278,7 +1334,6 @@ textarea.form-control {
 	}
 }
 
-
 .ftco-footer-social {
 	li {
 		list-style: none;
@@ -1325,9 +1380,7 @@ textarea.form-control {
 	}
 }
 
-
 // Map
-
 #map {
 	// height: 400px;
 	width: 100%;
@@ -1335,7 +1388,6 @@ textarea.form-control {
 		height: 300px;
 	}
 }
-
 
 @-webkit-keyframes pulse {
   0% {
@@ -1418,9 +1470,7 @@ textarea.form-control {
 	background-position: center center;
 }
 
-
 // magnific pop up
-
 .image-popup {
 	cursor: -webkit-zoom-in;
 	cursor: -moz-zoom-in;
@@ -1447,9 +1497,6 @@ textarea.form-control {
 .mfp-with-zoom.mfp-removing.mfp-bg {
   opacity: 0;
 }
-
-
-
 
 #section-counter{
 	position: relative;
@@ -1555,7 +1602,6 @@ textarea.form-control {
 	}
 }
 
-
 .block-23 {
 	ul {
 		padding: 0;
@@ -1630,7 +1676,6 @@ textarea.form-control {
 		}
 	}
 }
-
 
 .contact-section {
 	.contact-info{
@@ -1707,7 +1752,6 @@ textarea.form-control {
 	}
 
 }
-
 
 //### .block-21
 .block-21 {
@@ -1860,9 +1904,7 @@ textarea.form-control {
 	}
 }
 
-
 // sidebar
-
 .sidebar-box {
 	margin-bottom: 30px;
 	padding: 25px;
@@ -1913,8 +1955,6 @@ textarea.form-control {
 		}
 	}
 }
-
-
 
 #ftco-loader {
 	position: fixed;
@@ -1985,4 +2025,32 @@ textarea.form-control {
     stroke-dasharray: 89, 200;
     stroke-dashoffset: -136px;
   }
+}
+
+/* Ensuring project banners display fully */
+.project-banner {
+    width: 100%;
+    height: 250px; /* Adjust height as needed */
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.project-banner img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures images fill the space without distortion */
+}
+
+/* Make project cards flexible for responsiveness */
+.projects-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.project-card {
+    flex: 1 1 calc(33.33% - 20px); /* Makes project cards evenly spaced */
+    min-width: 300px; /* Prevents excessive shrinking */
 }
